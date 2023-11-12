@@ -3,11 +3,12 @@
 ```c
 struct MixedData { /* After compilation in 32-bit x86 machine */
     char Data1; // 1 byte 
-    /* [1 byte padding]: for the following 'short' to be aligned on a 2 byte boundary*/
+    /* [1 byte padding]: for the following 'short' to be aligned on a 2 byte boundary */
     short Data2; // 2 bytes
     int Data3;  // 4 bytes - largest structure member
     char Data4; // 1 byte
-    /* [3 bytes padding]: to make total size of the structure 12 bytes, which is a multiple of 4, the largest alignment within the struct */
+    /* [3 bytes padding]: to make total size of the structure 12 bytes, which is a
+       multiple of 4, the largest alignment within the struct */
 };
 ```
 ## Alignment and padding
