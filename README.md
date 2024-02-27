@@ -16,7 +16,7 @@ struct MixedData { /* After compilation in 32-bit x86 machine */
 ### Most important principles
 
 - **Padding is added for the next data to align with its size.**
-- **The padding in the end makes sure that the total struct size is a multiple of the biggest alignment (size) of any member.**
+- **The padding in the end makes sure that the total struct size is a multiple of the biggest alignment (size) of any member. For example, a struct has member char c[9] and int i, then the alignment of the whole strucy should be 4, not 9, which means, its size should be a multiple of 4, not 9, because though c has the biggest size 9, its alignment is however only 1.**
 
 > The second principle ensures that, in an array of structs, every struct as well as all its members are still aligned.
 
